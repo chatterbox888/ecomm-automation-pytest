@@ -47,9 +47,10 @@ class TestEndToEndCheckoutGuestUser:
 
         #  apply coupon
         coupon_code = MainConfigs.get_coupon_code('FREE_COUPON')
-        time.sleep(10)
+        time.sleep(5)
         cart_page.apply_coupon(coupon_code)
-
+        time.sleep(5)
+        
         # proceed to checkout
         cart_page.click_on_proceed_to_checkout()
 
