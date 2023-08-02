@@ -7,6 +7,7 @@ from demostore_automation.src.pages.CartPage import CartPage
 from demostore_automation.src.pages.components.NotificationBar import NotificationBar
 from demostore_automation.src.pages.CheckoutPage import CheckoutPage
 from demostore_automation.src.pages.MyAccountSignedOutPage import MyAccountSignedOutPage
+import time
 
 
 @pytest.mark.notificationbar
@@ -25,6 +26,7 @@ class TestFreeShippingBanner:
 
         # verify the notification bar is displayed
         NotificationBar(self.driver).verify_notification_bar_is_displayed()
+        time.sleep(3)
 
     @pytest.mark.tcid70
     @pytest.mark.pioneertcid8
@@ -34,7 +36,8 @@ class TestFreeShippingBanner:
 
         # verify the notification bar is displayed
         NotificationBar(self.driver).verify_notification_bar_is_displayed()
-
+        time.sleep(3)
+    
     @pytest.mark.tcid71
     @pytest.mark.pioneertcid9
     def test_verify_free_shipping_banner_displayed_in_checkout_page(self):
@@ -45,10 +48,12 @@ class TestFreeShippingBanner:
 
         # verify the notification bar is displayed
         NotificationBar(self.driver).verify_notification_bar_is_displayed()
-
+        time.sleep(3)
+    
     @pytest.mark.tcid72
     @pytest.mark.pioneertcid10
     def test_verify_free_shipping_banner_not_displayed_in_my_account_page(self):
         MyAccountSignedOutPage(self.driver).go_to_my_account()
         # verify the notification bar is not displayed
         NotificationBar(self.driver).verify_notification_bar_is_not_displayed()
+        time.sleep(3)
